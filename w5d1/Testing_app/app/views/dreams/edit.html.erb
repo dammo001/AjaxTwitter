@@ -1,0 +1,37 @@
+<h1>Edit your Dream</h1>
+
+<form  action="<%= dream_url(@dream) %>" method="post">
+  <input type="hidden" name="_method" value="PATCH">
+
+  <input type="hidden"
+         name="authenticity_token"
+         value="<%=form_authenticity_token%>">
+
+  <label>
+    Title
+    <input type="text" name="dream[title]" value="<%=@dream.title%>">
+  </label>
+
+  <label>
+    Body
+    <textarea name="dream[body]" rows="8" cols="20"><%= @dream.body %></textarea>
+  </label>
+
+  <label for="true">Private</label>
+    <input type="radio"
+           name="dream[personal]"
+           value="true"
+           id="true"
+           <%= "checked" if @dream.personal == true %>>
+  <label for="false">Public</label>
+    <input type="radio"
+           name="dream[personal]"
+           value="false"
+           id="false"
+           <%= "checked" if @dream.personal == false %>>
+  <br><br>
+
+  
+  <input type="submit" value="Submit">
+
+</form>

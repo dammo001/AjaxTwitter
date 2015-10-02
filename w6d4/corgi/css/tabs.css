@@ -1,0 +1,38 @@
+html, body, section, article,
+h1, h2, p, strong, em, a, li {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: inherit;
+  font: inherit;
+  text-decoration: inherit;
+  text-align: inherit;
+  color: inherit;
+  background: transparent;
+  list-style-type: none;
+}
+
+a.active {
+  font-weight: bold;
+}
+
+article {
+  display: none;
+}
+
+article.active {
+  display: block;
+  opacity: 1;
+  transition: opacity 500ms;
+}
+
+/* default for transitioning state,
+which triggers when we set opacity
+ to 0
+*/
+article.transitioning {
+  display: block;
+  opacity: 0;
+  transition: opacity 500ms;
+}
